@@ -11,3 +11,5 @@ G
 java-example/Dockerfile,7/1/7199b7ab354dd83aa9849811b5bdb102f0309581
 G
 node-example/.gitignore,0/a/0aa2cc38687b4d344b126923e74e5516925cd83c
+J
+node-example/.dockerignore,1/5/158b250b1ad7e270de88a5c1b83c6674524ba50c

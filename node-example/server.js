@@ -1,13 +1,15 @@
 'use strict';
 
-import express from 'express';
+const express = require('express');
 
+// Constants
 const PORT = 8080;
 const HOST = '0.0.0.0';
 
+// App
 const app = express();
 app.get('/', (req, res) => {
-	res.send('Hello from Node');
+	res.send('Hello from Node\n');
 });
 
 app.listen(PORT, HOST);
