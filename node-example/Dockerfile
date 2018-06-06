@@ -1,5 +1,5 @@
 FROM node:carbon
-# create the app directory for inside the Docker image
+# create the app directory for inside the Docker imagepaige
 WORKDIR /usr/src/app
 # install app dependencies from the package.json (and the package-lock.json)
 COPY package*.json ./
