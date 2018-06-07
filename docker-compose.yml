@@ -12,9 +12,31 @@ services:
      - NGINX_PORT=80
     command: /bin/bash -c "envsubst < /etc/nginx/conf.d/localhost.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
     depends_on:
-      - java-example
-      - node-example
-  java-example:
-    build: java-example/
-  node-example:
-    build: node-example/
+      - java-example_1
+      - node-example_1
+      - java-example_2
+      - node-example_2
+      - java-example_3
+      - node-example_3
+  java-example_1:
+#    build: example1/java-example/
+    image: paigen11/java-example:1
+  node-example_1:
+#    build: example1/node-example/
+    image: paigen11/node-example:1
+  java-example_2:
+#    build: example2/java-example/
+    image: paigen11/java-example:2
+  node-example_2:
+#    build: example2/node-example/
+    image: paigen11/node-example:2
+  java-example_3:
+#    build: example3/java-example/
+    image: paigen11/java-example:3
+  node-example_3:
+#    build: example3/node-example/
+    image: paigen11/node-example:3
+  java-example_latest:
+    image: paigen11/java-example:latest
+  node-example_latest:
+    image: paigen11/node-example:latest
