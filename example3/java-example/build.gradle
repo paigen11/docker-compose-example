@@ -1,0 +1,55 @@
+buildscript {
+	repositories {
+		maven { url ( "${artifactory_contextUrl}" + "${artifactory_repo_lib}" ) }
+		maven { url ( "${artifactory_contextUrl}" + "${artifactory_repo_plugin}" ) }
+		jcenter()
+		mavenCentral()
+		maven { url 'https://repo.spring.io/libs-snapshot' }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE")
+		classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.13.0')
+	}
+}
+
+group = 'paigen11'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'com.palantir.docker'
+
+bootJar {
+	baseName = 'java-example'
+}
+
+repositories {
+	mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-web")
+	testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+task wrapper(type: Wrapper) {
+	distributionUrl = "https://maven.artifactory.homedepot.com/artifactory/gradle-binaries-cache/distributions/gradle-4.7-all.zip"
+}
+
+docker {
+	dependsOn build
+
+//	the image name is set from the jar file properties
+	name "${project.group}/${bootJar.baseName}"
+
+//	location of jar file specified
+	files bootJar.archivePath
+
+//	build argument provided for docker pointing to jar file
+	buildArgs(['JAR_FILE': "${bootJar.archiveName}"])
+}

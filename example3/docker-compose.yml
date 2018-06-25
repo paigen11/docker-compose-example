@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  web:
+    image: nginx
+    volumes:
+     - ./nginx/localhost.conf:/etc/nginx/conf.d/localhost.conf
+    ports:
+     - "80:80"
+    environment:
+     - NGINX_HOST=localhost
+     - NGINX_PORT=80
+    command: /bin/bash -c "envsubst < /etc/nginx/conf.d/localhost.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+    depends_on:
+      - java-example
+      - node-example
+  java-example:
+    build: java-example/
+  node-example:
+    build: node-example/
