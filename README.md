@@ -1,6 +1,6 @@
 # Sample 04
 
-This demonstrates the versioned implementation of Docker using docker-compose and nginx.
+This demonstrates the versioned implementation of Docker using docker-compose and Nginx.
 
 To use:
 

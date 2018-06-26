@@ -29,3 +29,11 @@ P
  example1/java-example/Dockerfile,f/7/f7928d80e847d4854cb281c4d7dd2ee637669cf3
 P
  example1/node-example/Dockerfile,a/3/a39973d4c124e4a2de201a7e0934c9ad91447db3
+B
+example1/README.md,e/2/e270f8bc73623c61f9091dd79bbe36075493a6bc
+B
+example2/README.md,0/8/085532331cc7d78f0e9f284fe823ea96341947d2
+B
+example3/README.md,9/1/91a8416c72875e97c6c41ae8c423847dd5c7cf75
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
