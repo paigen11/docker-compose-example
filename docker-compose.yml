@@ -19,22 +19,22 @@ services:
       - java-example_3
       - node-example_3
   java-example_1:
-#    build: example1/java-example/
+    build: example1/java-example/
     image: example1/java-example
   node-example_1:
-#    build: example1/node-example/
+    build: example1/node-example/
     image: example1/node-example
   java-example_2:
-#    build: example2/java-example/
+    build: example2/java-example/
     image: example2/java-example
   node-example_2:
-#    build: example2/node-example/
+    build: example2/node-example/
     image: example2/node-example
   java-example_3:
-#    build: example3/java-example/
+    build: example3/java-example/
     image: example3/java-example
   node-example_3:
-#    build: example3/node-example/
+    build: example3/node-example/
     image: example3/node-example
   java-example_latest:
     image: example1/java-example:latest

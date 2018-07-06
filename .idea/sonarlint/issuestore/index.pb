@@ -37,3 +37,5 @@ B
 example3/README.md,9/1/91a8416c72875e97c6c41ae8c423847dd5c7cf75
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+P
+ example2/node-example/Dockerfile,6/6/663008d259095cb48a4ecab6158c7be6a3109069
